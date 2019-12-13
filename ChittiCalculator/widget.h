@@ -9,6 +9,8 @@
 #include <QLabel>
 #include <QDebug>
 #include <QGridLayout>
+#include <QValidator>
+#include "calculator.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -17,6 +19,7 @@ QT_END_NAMESPACE
 class Widget : public QWidget
 {
     Q_OBJECT
+
 
 public:
     Widget(QWidget *parent = nullptr);
@@ -42,10 +45,15 @@ public:
 
     QPushButton *m_btn;
 
+    QValidator *m_validator_chitAmount;
+    QValidator *m_validator_totalMonths;
+    QValidator *m_validator_chitTakenMonth;
+    QValidator *m_validator_currentMonth;
+
 private:
     //Ui::Widget *ui;
 
 public slots:
-    void calculate();
+
 };
 #endif // WIDGET_H
